@@ -1,0 +1,25 @@
+{% extends 'tasks/base.html' %}
+
+{% block title %}
+Edit task
+{% endblock title %}
+
+{% block texto_header %}
+<h1>Edit task</h1>
+{% endblock texto_header %}
+
+{% block contenido %}
+{% comment %} <p>
+    <a href={% url 'list_tasks' %}>Return</a>
+</p> {% endcomment %}
+
+<p>
+    <form action={% url 'edit_task' task.id %} method="POST">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <button type="submit">Edit</button>
+    </form>
+</p>
+{% endblock contenido %}

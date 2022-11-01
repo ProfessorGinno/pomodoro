@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Search Task{% endblock title %}
+
+{% block content %}
+    <form action={% url "search" %} method="POST">
+        {% csrf_token %}
+        {{form}}
+        <button 'btn btn:primary' type='submit'>Edit</button>
+    </form>
+{% endblock content %}
